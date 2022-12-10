@@ -21,6 +21,6 @@ class BridgeMaker(private val bridgeNumberGenerator: BridgeNumberGenerator) {
             }
         }
 
-        return listOf()
+        return bridge
     }
 }
