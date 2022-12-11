@@ -4,6 +4,13 @@ package bridge.values
 const val GAME_RETRY_COMMAND = "R"
 const val GAME_QUIT_COMMAND = "Q"
 
+// game movement status
+const val CORRECT_MOVEMENT = "O"
+const val INCORRECT_MOVEMENT = "X"
+
+// single character
+const val EMPTY_SPACE = " "
+
 // input require message
 const val REQUIRE_BRIDGE_LENGTH_MESSAGE = "다리의 길이를 입력해주세요."
 const val REQUIRE_MOVEMENT_MESSAGE = "이동할 칸을 선택해주세요. (위: U, 아래: D)"
@@ -23,9 +30,6 @@ private const val GAME_RETRY_COMMAND_CONDITION_MESSAGE = "게임 재시작 여�
 // error message
 private const val ERROR_MESSAGE = "[ERROR]"
 
-// single character
-private const val SPACE = " "
-
-const val BRIDGE_SIZE_CONDITION_ERROR_MESSAGE = ERROR_MESSAGE + SPACE + BRIDGE_SIZE_CONDITION_MESSAGE
-const val MOVEMENT_CONDITION_ERROR_MESSAGE = ERROR_MESSAGE + SPACE + MOVEMENT_CONDITION_MESSAGE
-const val GAME_RETRY_COMMAND_CONDITION_ERROR_MESSAGE = ERROR_MESSAGE + SPACE + GAME_RETRY_COMMAND_CONDITION_MESSAGE
+const val BRIDGE_SIZE_CONDITION_ERROR_MESSAGE = ERROR_MESSAGE + EMPTY_SPACE + BRIDGE_SIZE_CONDITION_MESSAGE
+const val MOVEMENT_CONDITION_ERROR_MESSAGE = ERROR_MESSAGE + EMPTY_SPACE + MOVEMENT_CONDITION_MESSAGE
+const val GAME_RETRY_COMMAND_CONDITION_ERROR_MESSAGE = ERROR_MESSAGE + EMPTY_SPACE + GAME_RETRY_COMMAND_CONDITION_MESSAGE

@@ -4,6 +4,7 @@ import bridge.BridgeRandomNumberGenerator
 import bridge.domain.BridgeMaker
 import bridge.model.BridgeGame
 import bridge.values.GAME_QUIT_COMMAND
+import bridge.values.GAME_RETRY_COMMAND
 import bridge.values.NOTICE_GAME_START_MESSAGE
 import bridge.view.InputView
 import bridge.view.OutputView
@@ -30,10 +31,10 @@ class GameController(
         val movement = getValidatedMovement()
         bridgeGame.move(movement)
 
-        if(!bridgeGame.isCorrectMovemet()) {
+        if(!bridgeGame.isCorrectMovement(movement)) {
             val gameCommand = getValidatedGameCommand()
-
-            if (gameCommand == GAME_QUIT_COMMAND) bridgeGame.endGame()
+            if (gameCommand == GAME_RETRY_COMMAND) bridgeGame.retry()
+            else bridgeGame.endGame()
         }
     }
 
