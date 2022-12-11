@@ -58,7 +58,7 @@ class GameController(
             try {
                 return inputView.readBridgeSize()
             } catch (e: IllegalArgumentException) {
-                throw e
+                println(e.message)
             }
         }
     }
@@ -68,7 +68,7 @@ class GameController(
             try {
                 return inputView.readMoving()
             } catch (e: IllegalArgumentException) {
-                throw e
+                println(e.message)
             }
         }
     }
@@ -78,7 +78,7 @@ class GameController(
             try {
                 return inputView.readGameCommand()
             } catch (e: IllegalArgumentException) {
-                throw e
+                println(e.message)
             }
         }
     }

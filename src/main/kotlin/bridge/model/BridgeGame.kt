@@ -51,6 +51,7 @@ class BridgeGame (
     fun isCorrectMovement(movement: String) = movement == bridge[moveCount]
 
     fun isGameEnd() = activateStatus != GAME_STATUS_ACTIVATE
+
     fun isGameSuccess(): Boolean {
         repeat(progress.size) { index ->
             if (progress[index].contains(INCORRECT_MOVEMENT)) return false
