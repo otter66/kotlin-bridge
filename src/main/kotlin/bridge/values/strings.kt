@@ -8,6 +8,10 @@ const val GAME_QUIT_COMMAND = "Q"
 const val CORRECT_MOVEMENT = "O"
 const val INCORRECT_MOVEMENT = "X"
 
+// game success or not
+const val GAME_SUCCESS_MESSAGE = "성공"
+const val GAME_FAIL_MESSAGE = "실패"
+
 // single character
 const val EMPTY_SPACE = " "
 

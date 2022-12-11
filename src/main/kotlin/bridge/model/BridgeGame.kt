@@ -13,7 +13,7 @@ class BridgeGame (
     private var activateStatus = GAME_STATUS_ACTIVATE
     private var progress: List<MutableList<String>> = List(BRIDGE_OPTION_NUMBER) { mutableListOf() }
     private var moveCount = 0
-    private var tryCount = 0
+    private var tryCount = 1
 
 
     /**
@@ -65,4 +65,6 @@ class BridgeGame (
     }
 
     fun getProgress() = progress
+
+    fun getTryCount() = tryCount
 }

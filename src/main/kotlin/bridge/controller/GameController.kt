@@ -16,7 +16,7 @@ class GameController(
     fun runGame() {
         val bridgeGame: BridgeGame = createGame()
         runGameRounds(bridgeGame)
-        endGame()
+        endGame(bridgeGame)
     }
 
     private fun runGameRounds(bridgeGame: BridgeGame) {
@@ -33,7 +33,7 @@ class GameController(
         if(!bridgeGame.isCorrectMovement(movement)) {
             val gameCommand = getValidatedGameCommand()
             if (gameCommand == GAME_RETRY_COMMAND) bridgeGame.retry()
-            else bridgeGame.endGame()
+            else endGame(bridgeGame)
         }
     }
 
@@ -48,8 +48,9 @@ class GameController(
         return BridgeGame(bridgeSize, bridge)
     }
 
-    private fun endGame() {
-
+    private fun endGame(bridgeGame: BridgeGame) {
+        bridgeGame.endGame()
+        outputView.printResult(bridgeGame)
     }
 
     private fun getValidatedBridgeSize(): Int {

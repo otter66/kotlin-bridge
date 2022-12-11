@@ -1,7 +1,7 @@
 package bridge.view
 
 import bridge.model.BridgeGame
-import bridge.values.Movement
+import bridge.values.*
 
 /**
  * 사용자에게 게임 진행 상황과 결과를 출력하는 역할을 한다.
@@ -17,6 +17,7 @@ class OutputView {
 
         println(bridge[Movement.UP.index].joinToString(" | ", "[ ", " ]"))
         println(bridge[Movement.DOWN.index].joinToString(" | ", "[ ", " ]"))
+        println()
     }
 
     /**
@@ -24,8 +25,15 @@ class OutputView {
      *
      * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
-    fun printResult() {
+    fun printResult(bridgeGame: BridgeGame) {
+        println(NOTICE_GAME_RESULT_MESSAGE)
+        printMap(bridgeGame)
 
+        println(NOTICE_GAME_SUCCESS_OR_NOT_MESSAGE.format(
+            if (bridgeGame.isGameSuccess()) GAME_SUCCESS_MESSAGE
+            else GAME_FAIL_MESSAGE
+        ))
+        println(NOTICE_GAME_TRY_COUNT_MESSAGE.format(bridgeGame.getTryCount()))
     }
 
     fun printMessage(message: String) {
