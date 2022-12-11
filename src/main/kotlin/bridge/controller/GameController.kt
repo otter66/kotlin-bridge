@@ -22,7 +22,7 @@ class GameController(
     private fun runGameRounds(bridgeGame: BridgeGame) {
         while (true) {
             runGameTurn(bridgeGame)
-            if (bridgeGame.isGameEnd()) return
+            if (bridgeGame.isGameEnd()) break
         }
     }
 
