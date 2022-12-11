@@ -24,6 +24,7 @@ class BridgeGame (
     fun move(movement: String) {
         updateProgress(movement)
         moveCount++
+        if (bridgeSize <= moveCount) endGame()
     }
 
     private fun updateProgress(movement: String) {
