@@ -22,8 +22,8 @@ class BridgeGame (
      * 이동을 위해 필요한 메서드의 반환 타입(return type), 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
      */
     fun move(movement: String) {
-        updateProgress(movement)
         moveCount++
+        updateProgress(movement)
         if (bridgeSize <= moveCount) endGame()
     }
 
@@ -49,7 +49,7 @@ class BridgeGame (
         tryCount++
     }
 
-    fun isCorrectMovement(movement: String) = movement == bridge[moveCount]
+    fun isCorrectMovement(movement: String) = movement == bridge[moveCount - 1]
 
     fun isGameEnd() = activateStatus != GAME_STATUS_ACTIVATE
 
