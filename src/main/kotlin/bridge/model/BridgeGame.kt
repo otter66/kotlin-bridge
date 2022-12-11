@@ -58,4 +58,6 @@ class BridgeGame (
     fun endGame() {
         activateStatus = GAME_STATUS_INACTIVATE
     }
+
+    fun getProgress() = progress
 }
